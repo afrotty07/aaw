@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥取県立博物館企画提案書 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --museum-blue: #1a365d;
+            --museum-gold: #c5a059;
+            --paper-white: #fdfdfb;
+        }
+        body {
+            background-color: #e5e7eb;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .book-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--paper-white);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .page {
+            padding: 60px 80px;
+            min-height: 297mm;
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            border-bottom: 2px solid var(--museum-blue);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .section-title {
+            color: var(--museum-blue);
+            border-left: 4px solid var(--museum-blue);
+            padding-left: 1rem;
+            margin: 2rem 0 1.5rem 0;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        .subsection-title {
+            color: #2d3748;
+            font-weight: bold;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .subsection-title::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--museum-gold);
+            margin-right: 8px;
+        }
+        .cover {
+            text-align: center;
+            justify-content: center;
+        }
+        .cover-title {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            color: var(--museum-blue);
+            margin: 3rem 0;
+        }
+        .badge {
+            background: #edf2f7;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #4a5568;
+            margin-right: 0.3rem;
+        }
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .table-custom th, .table-custom td {
+            border: 1px solid #e2e8f0;
+            padding: 10px;
+            text-align: left;
+        }
+        .table-custom th {
+            background: #f8fafc;
+            color: var(--museum-blue);
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body { background: white; }
+            .book-container { margin: 0; box-shadow: none; width: 210mm; }
+            .page { 
+                height: 297mm; 
+                page-break-after: always;
+                padding: 15mm 20mm;
+            }
+            .no-print { display: none !important; }
+        }
+
+        .nav-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav-sidebar no-print hidden xl:block">
+    <div class="bg-white p-4 rounded shadow-lg border-t-4 border-blue-900">
+        <p class="font-bold mb-2 text-blue-900 border-b text-xs">PAGES</p>
+        <ul class="space-y-2 text-sm">
+            <li><a href="#p1" class="hover:text-amber-600 transition">1. 表紙</a></li>
+            <li><a href="#p2" class="hover:text-amber-600 transition">2. 企画・授業設計</a></li>
+            <li><a href="#p3" class="hover:text-amber-600 transition">3. 安全管理・連絡先</a></li>
+        </ul>
+        <button onclick="window.print()" class="mt-4 w-full bg-blue-900 text-white text-xs py-2 rounded font-bold hover:bg-blue-800 transition">
+            PDF保存 / 印刷
+        </button>
+    </div>
+</nav>
+
+<div class="no-print bg-blue-900 text-white p-2 text-center sticky top-0 z-50 flex justify-center items-center gap-4">
+    <span class="text-xs">【3ページ構成】ブラウザの印刷機能からPDF保存が可能です。</span>
+    <button onclick="window.print()" class="bg-white text-blue-900 px-3 py-1 rounded text-xs font-bold hover:bg-blue-50 transition">
+        保存画面を開く
+    </button>
+</div>
+
+<div class="book-container">
+    <!-- PAGE 1: COVER -->
+    <section id="p1" class="page cover">
+        <div class="text-lg font-bold tracking-widest text-gray-400 mb-2">2026年度 企画提案書</div>
+        <div class="h-1 w-20 bg-blue-900 mx-auto mb-10"></div>
+        
+        <h1 class="cover-title serif font-bold">
+            中学1年「STEAM×社会×理科」合同授業：<br>
+            <span class="text-2xl lg:text-3xl">鳥取県立博物館 収蔵資料3Dスキャン<br>“Scanthon” 大会の実施提案</span>
+        </h1>
+
+        <div class="my-10 space-y-2 text-lg">
+            <p>青翔開智中学校　社会科・STEAM担当　池田夏暉</p>
+            <p class="text-sm text-gray-500">協力：青翔開智中学校 理科担当</p>
+        </div>
+
+        <div class="mt-20 grid grid-cols-3 gap-4 max-w-lg mx-auto border-t border-b py-6 text-sm text-gray-600">
+            <div>
+                <p class="font-bold text-blue-900">実施予定</p>
+                <p>2026年 秋</p>
+            </div>
+            <div>
+                <p class="font-bold text-blue-900">対象</p>
+                <p>中1 約50名</p>
+            </div>
+            <div>
+                <p class="font-bold text-blue-900">ツール</p>
+                <p>Scaniverse</p>
+            </div>
+        </div>
+        
+        <div class="mt-auto text-xs text-gray-400">SEISHOKAICHI JUNIOR & SENIOR HIGH SCHOOL</div>
+    </section>
+
+    <!-- PAGE 2: CONTENT & CURRICULUM -->
+    <section id="p2" class="page">
+        <div class="page-header">
+            <span class="text-xs font-bold text-blue-900 uppercase">Section 01-04</span>
+            <span class="text-xs text-gray-400">Page 02</span>
+        </div>
+
+        <h2 class="section-title">1. 提案趣旨と狙い</h2>
+        <div class="grid grid-cols-3 gap-4 mb-6">
+            <div class="p-3 bg-slate-50 border-l-2 border-blue-900 text-xs">
+                <p class="font-bold mb-1">教育効果</p>
+                観察・調査・制作の探究サイクルを3教科横断で体験。
+            </div>
+            <div class="p-3 bg-slate-50 border-l-2 border-blue-900 text-xs">
+                <p class="font-bold mb-1">博物館の価値</p>
+                未公開収蔵資料のデジタルアーカイブ化を生徒が支援。
+            </div>
+            <div class="p-3 bg-slate-50 border-l-2 border-blue-900 text-xs">
+                <p class="font-bold mb-1">地域還元</p>
+                成果をバーチャル展示等で発信し、アウトリーチを推進。
+            </div>
+        </div>
+
+        <h2 class="section-title">2. 合同授業の設計</h2>
+        <table class="table-custom mb-8">
+            <thead>
+                <tr>
+                    <th width="15%">教科</th>
+                    <th>到達目標</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="font-bold">理科</td>
+                    <td>形態観察・特徴の抽出。科学的スケッチ。観察事実と推論の区別。</td>
+                </tr>
+                <tr>
+                    <td class="font-bold">社会</td>
+                    <td>博物館の公共性。文化財保護の倫理。アーカイブの利活用と責任。</td>
+                </tr>
+                <tr>
+                    <td class="font-bold">STEAM</td>
+                    <td>3Dフォトグラメトリの原理。撮影計画の改善。デジタル表現の最適化。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">3. 授業スケジュール（計3コマ）</h2>
+        <div class="space-y-6 ml-4">
+            <div class="flex gap-4">
+                <div class="font-bold text-blue-900">第1コマ</div>
+                <div class="text-sm">
+                    <p class="font-bold">【導入・観察】</p>
+                    <p class="text-gray-600">博物館の役割理解、スケッチ、非接触計測のルール確認と計画策定。</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="font-bold text-blue-900">第2コマ</div>
+                <div class="text-sm">
+                    <p class="font-bold">【Scanthon 実施①】</p>
+                    <p class="text-gray-600">Scaniverseによる一次スキャン。死角や精度の課題をリアルタイムで発見。</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="font-bold text-blue-900">第3コマ</div>
+                <div class="text-sm">
+                    <p class="font-bold">【改善・まとめ】</p>
+                    <p class="text-gray-600">リテイクによる品質向上。相互講評と、デジタルデータの活用案を共有。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: SAFETY & CONTACT -->
+    <section id="p3" class="page">
+        <div class="page-header">
+            <span class="text-xs font-bold text-blue-900 uppercase">Section 07-08</span>
+            <span class="text-xs text-gray-400">Page 03</span>
+        </div>
+
+        <h2 class="section-title">4. 安全管理と資料保護（最優先事項）</h2>
+        <div class="bg-amber-50 border border-amber-200 p-5 rounded-lg mb-10">
+            <h3 class="text-amber-900 font-bold mb-2 flex items-center text-sm">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                収蔵資料保護プロトコル
+            </h3>
+            <ul class="list-disc ml-6 space-y-2 text-xs text-gray-800 leading-relaxed">
+                <li><strong>非接触・非侵襲</strong>：撮影は一定の距離を保ち、資料への接触は一切行いません。</li>
+                <li><strong>環境保全</strong>：高輝度フラッシュや熱源となる機材は使用しません。</li>
+                <li><strong>権利の帰属</strong>：生成された3Dデータの主たる権利は博物館に帰属するものとします。</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">5. 役割分担（案）</h2>
+        <div class="grid grid-cols-2 gap-6 text-xs mb-10">
+            <div class="border p-4 rounded bg-white shadow-sm">
+                <p class="font-bold text-blue-900 mb-2 underline">博物館様にお願いしたい事</p>
+                <ul class="list-disc ml-4 space-y-1">
+                    <li>対象資料の選定</li>
+                    <li>資料の取り扱い・安全監修</li>
+                    <li>可能であれば5分程度の解説</li>
+                </ul>
+            </div>
+            <div class="border p-4 rounded bg-white shadow-sm">
+                <p class="font-bold text-blue-900 mb-2 underline">学校側が担う事</p>
+                <ul class="list-disc ml-4 space-y-1">
+                    <li>生徒の安全・動線管理</li>
+                    <li>スキャン用端末の用意・操作指導</li>
+                    <li>データの整形・取りまとめ・納品</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-auto pt-10 border-t border-gray-200">
+            <h2 class="serif text-xl font-bold mb-6 text-center text-blue-900">お問い合わせ・ご相談窓口</h2>
+            <div class="max-w-md mx-auto bg-slate-50 p-6 border rounded shadow-sm text-sm">
+                <p class="font-bold mb-1">青翔開智中学校・高等学校</p>
+                <p class="text-gray-600 mb-4">担当：池田 夏暉（STEAM連携担当）</p>
+                <div class="space-y-1 text-xs text-gray-500">
+                    <p>〒680-8066 鳥取県鳥取市国府町新通り3丁目301-2</p>
+                    <p>TEL：0857-30-5541</p>
+                    <p>MAIL：n.ikeda@seishokaichi.ed.jp</p>
+                </div>
+            </div>
+            <div class="mt-10 text-center text-[10px] text-gray-400">
+                &copy; Seishokaichi Junior & Senior High School | 2026 Proposal
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
